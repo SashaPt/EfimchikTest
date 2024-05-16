@@ -1,0 +1,147 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #e2e2e2;
+}
+::-webkit-scrollbar-thumb {
+  background: $color_red;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::selection {
+  background: $color_red;
+  color: $color_light;
+}
+
+body {
+  color: $color_dark;
+  font-size: 24px;
+  line-height: 1.6;
+  min-width: 320px;
+  background-color: $color_bg-light;
+  font-family: 'Hero', sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: min(80vw, 1460px);
+  position: relative;
+}
+
+main {
+  margin-top: 210px;
+}
+
+section {
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section__title {
+  margin-top: 0;
+  display: flex;
+  color: #242424;
+  line-height: 1;
+  font-weight: 600;
+  margin-bottom: 70px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+a.icon__social {
+  display: block;
+  width: 36.65px;
+  height: 36.65px;
+}
+
+a.icon__social.icon__social_whatsapp-b {
+  background: url('../img/whatsapp-b.svg') center/contain no-repeat;
+}
+a.icon__social.icon__social_telegram-b {
+  background: url('../img/telegram-b.svg') center/contain no-repeat;
+}
+
+.anim {
+  animation-name: appear;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.anim__translate-right {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.anim__translate-up {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.anim__rotate {
+  opacity: 0;
+  transform: perspective(2500px) rotateX(-100deg);
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: unset;
+  }
+}
+@media (max-width: 1649px) {
+  body {
+    font-size: 22px;
+  }
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+  section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  } 
+
+  .container {
+    max-width: 90vw;
+  }
+
+  main {
+    margin-top: 125px;
+  }
+
+  a.icon__social {
+    width: 27.65px;
+    height: 27.65px;
+  }
+}
+@media (max-width: 1199px) {
+  .section__title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 991px) {
+  body {
+    font-size: 18px;
+  }
+  .section__title {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 100vw;
+  }
+  .section__title {
+    margin-bottom: 40px;
+  }
+}

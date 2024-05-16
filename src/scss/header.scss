@@ -1,0 +1,115 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 150px;
+  background: $color_bg-light url('../img/polygon-08.svg') left top/contain no-repeat;
+  display: flex;
+  align-items: center;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 25px;
+    align-items: flex-end;
+    flex-direction: column;
+    span {
+      width: 55px;
+      height: 3px;
+      margin: 4px 0;
+      background-color: $color_red;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:nth-child(3) {
+        width: 35px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__logo {
+    margin-right: 25px;
+    max-width: max(150px, 10vw);
+  }
+  &__nav {
+    flex-grow: 1;
+    display: flex;
+  }
+  &__menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    a {
+      display: flex;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+      &:hover,
+      &.active {
+        color: $color_red;
+      }
+    }
+  }
+  &__button {
+    color: $color_light;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 20px 0px;
+
+    text-align: center;
+    transition: 0.25s ease;
+    text-transform: uppercase;
+    background: url('../img/btn.svg') center/contain no-repeat;
+    &:hover {
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    height: 125px;
+    background: $color_bg-light;
+    &__burger {
+      display: flex;
+    }
+    &__logo {
+      margin-top: 12px;
+    }
+    &__nav {
+      display: none;
+    }
+    &__button {
+      margin-left: auto;
+      width: 230px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    &__burger span {
+      width: 45px;
+      &:nth-child(3) {
+        width: 25px;
+      }
+    }
+    &__logo {
+      max-width: max(125px, 23vw);
+      margin-top: 6px;
+    }
+    &__button {
+      width: max(165px, 35vw);
+    }
+  }
+}
